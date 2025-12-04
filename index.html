@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador M/M/s - Optimización de Costos</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Análisis de Costos: Múltiples Servidores</h1>
+
+        <div class="input-grid">
+            <div class="input-group">
+                <label for="lambda">1. Tasa de Llegada (λ) [clientes/hora]</label>
+                <input type="number" id="lambda" placeholder="Ej. 45">
+            </div>
+            <div class="input-group">
+                <label for="mu">2. Tasa de Servicio (μ) [clientes/hora]</label>
+                <input type="number" id="mu" placeholder="Ej. 18">
+            </div>
+            <div class="input-group">
+                <label for="costServer">3. Costo por Servidor ($/hora)</label>
+                <input type="number" id="costServer" placeholder="Ej. 15">
+            </div>
+            <div class="input-group">
+                <label for="costWait">4. Costo de Espera ($/hora)</label>
+                <input type="number" id="costWait" placeholder="Ej. 25">
+            </div>
+        </div>
+
+        <button onclick="generarEscenarios()">Calcular Escenario Óptimo</button>
+
+        <div id="output" class="results-container">
+            <h3>Comparativa de Escenarios</h3>
+            <table id="tablaResultados">
+                <thead>
+                    <tr>
+                        <th>Servidores (s)</th>
+                        <th>Utilización (ρ)</th>
+                        <th>Lq (Cola)</th>
+                        <th>Wq (Mins)</th>
+                        <th>Costo Total ($)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
+            <div id="conclusionText" class="conclusion-box"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
